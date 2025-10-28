@@ -1,10 +1,11 @@
+USE sakila
 DROP TABLE IF EXISTS rating_analytics;
 CREATE TABLE IF NOT EXISTS rating_analytics(
     rating VARCHAR(10),
-    avg_rental_duration FLOAT,
-    avg_rental_rate FLOAT,
-    rentals MEDIUMINT,
-    avg_film_length FLOAT
+    avg_rental_duration DECIMAL(6, 5),
+    avg_rental_rate DECIMAL(6, 5),
+    rentals SMALLINT,
+    avg_film_length DECIMAL(4, 1)
 );
 
 INSERT INTO rating_analytics (
@@ -18,5 +19,5 @@ GROUP BY rating
 ORDER BY rating
 );
 
-select * from rating_analytics
+SELECT * FROM rating_analytics
 ORDER BY rentals DESC;
