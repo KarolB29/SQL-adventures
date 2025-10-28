@@ -14,7 +14,7 @@ ORDER BY rental_date DESC;
 SELECT *
 FROM sakila.rental
 WHERE rental_date >= '2005-01-01 00:00:00' AND rental_date <= '2005-12-31 23:59:59'
-ORDER BY rental_date ASC;
+ORDER BY rental_date;
 #OR
 SELECT *
 FROM sakila.rental
@@ -26,12 +26,12 @@ WHERE rental_date BETWEEN '2005-05-25 00:00:00' AND '2005-05-25 23:59:59';
 SELECT *
 FROM sakila.rental
 WHERE rental_date > '2005-06-30 23:59:59'
-ORDER BY rental_date ASC;
+ORDER BY rental_date;
 #OR
 SELECT *
 FROM sakila.rental
 WHERE rental_date >= '2005-07-01 00:00:00'
-ORDER BY rental_date ASC;
+ORDER BY rental_date;
 
 /*      o wypożyczeniach w trakcie wakacji, tj. pomiędzy 2005-06-30 a 2005-08-31
             od pracownika Jon'a (sprawdź najpierw jaki ma staff_id w sakila.staff).
@@ -62,9 +62,9 @@ WHERE rental_date BETWEEN '2005-06-30 00:00:00' AND '2005-08-31 23:59:59' AND st
     unikalne wartości w kolumnie create_date.
         /all unique values in column create_date        */
 ################### AD 2.1: ######################
-SELECT *
-FROM sakila.customer
-WHERE active IS NULL; /* check if any of record in column "active" includes NULL. No nulls so: */
+# SELECT *
+# FROM sakila.customer
+# WHERE active IS NULL; /* check if any of record in column "active" includes NULL. No nulls so: */
 
 SELECT *
 FROM sakila.customer
@@ -74,7 +74,7 @@ WHERE active = 1;
 SELECT *
 FROM sakila.customer
 WHERE active = 1 XOR first_name LIKE 'ANDRE%'
-ORDER BY first_name
+ORDER BY first_name;
 /* IMO this has no sense bcs we excluded active customers
 that name starts with "ANDRE". A strange thing to do,
 but only for exercise to study the difference between OR and XOR */
@@ -92,7 +92,7 @@ WHERE email NOT LIKE '%@sakilacustomer.org';
 
 ################### AD 3.2: ######################
 SELECT DISTINCT create_date
-FROM sakila.customer
+FROM sakila.customer;
 ###################################################
 
 #       Sformatuj kolumnę payment_date z tabeli sakila.payment, zgodnie ze standardem USA.
