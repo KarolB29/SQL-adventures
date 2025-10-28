@@ -1,3 +1,5 @@
+# Creating new table with statistics for table 'film':
+
 USE sakila;
 DROP TABLE IF EXISTS rating_analytics;
 CREATE TABLE rating_analytics(
@@ -28,3 +30,19 @@ VALUES( NULL,
 
 SELECT * FROM rating_analytics
 ORDER BY rating;
+
+# Create new table with ratings and their ids:
+
+DROP TABLE IF EXISTS rating;
+CREATE TABLE rating(
+    id_rating TINYINT PRIMARY KEY,
+    rating VARCHAR(5)
+);
+
+INSERT INTO rating
+SELECT ROW_NUMBER () OVER (ORDER BY rating),
+       rating
+FROM film
+GROUP BY rating;
+
+select* from rating;
