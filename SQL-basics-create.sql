@@ -24,7 +24,8 @@ VALUES( NULL,
     (SELECT AVG(rental_duration) FROM film),
     (SELECT AVG(rental_rate) FROM film),
     (SELECT COUNT(film_id) FROM film),
-    (SELECT AVG(length) FROM film));
+    (SELECT AVG(length) FROM film)
+);
 
 SELECT * FROM rating_analytics
 ORDER BY rating;
