@@ -93,7 +93,14 @@ WHERE email NOT LIKE '%@sakilacustomer.org';
 ################### AD 3.2: ######################
 SELECT DISTINCT create_date
 FROM sakila.customer
-
-
-
 ###################################################
+
+#       Sformatuj kolumnę payment_date z tabeli sakila.payment, zgodnie ze standardem USA.
+#       Tak powstałą kolumnę nazwij payment_date_usa_formatted.
+#       Convert column 'payment_date' from sakila.payment to USA format and name it 'payment_date_usa_formatted'.
+
+SELECT payment_id,
+       amount,
+       payment_date,
+       DATE_FORMAT(payment_date, GET_FORMAT(DATE, 'USA')) payment_date_usa_formatted
+FROM sakila.payment;
