@@ -16,7 +16,6 @@ INSERT INTO rating_analytics (
     AVG(length) as avg_lenght
 FROM film
 GROUP BY rating
-ORDER BY rating
 );
 
 INSERT INTO rating_analytics
