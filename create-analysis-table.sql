@@ -1,9 +1,9 @@
 -- CREATE ANALYTICS TABLE WITH ALL FILMS INCLUDED IN INVENTORY
-
+USE sakila;
 DROP TABLE IF EXISTS film_analytics;
 
 CREATE TABLE film_analytics(
-    film_id SMALLINT,
+    film_id SMALLINT PRIMARY KEY,
     title VARCHAR(30),
     rating VARCHAR(5),
     release_year YEAR,
@@ -42,7 +42,7 @@ LEFT JOIN (
 ) p ON f.film_id = p.film_id
 ORDER BY total_revenue DESC;
 
--- to find top 5 movies with greatest revenue.
+--  to find top 5 movies with greatest revenue.
 SELECT
     fa.title,
     fa.rating,
