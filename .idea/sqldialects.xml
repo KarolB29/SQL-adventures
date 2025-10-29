@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/SQL-basics.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/create-analysis-table.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/create-table-rating_analytics.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/film-by-rating-search-proc.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/subqueries.sql" dialect="MySQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
